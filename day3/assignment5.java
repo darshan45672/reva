@@ -1,8 +1,6 @@
-// write a program to simulate simple calculator using oops concept and constructor
-
 package day3;
 
-public class assignment5 {
+public class Assignment5 {  // Class name should start with uppercase
 
     public static class Calculator {
         private int a;
@@ -27,21 +25,28 @@ public class assignment5 {
                     System.out.println("Multiplication of two numbers is: " + (a * b));
                     break;
                 case '/':
-                    System.out.println("Division of two numbers is: " + (a / b));
+                    if (b == 0) {
+                        System.out.println("Error: Division by zero is not allowed.");
+                    } else {
+                        System.out.println("Division of two numbers is: " + (a / b));
+                    }
                     break;
                 case '%':
-                    System.out.println("Modulus of two numbers is: " + (a % b));
+                    if (b == 0) {
+                        System.out.println("Error: Modulus by zero is not allowed.");
+                    } else {
+                        System.out.println("Modulus of two numbers is: " + (a % b));
+                    }
                     break;
-
                 default:
                     System.out.println("Invalid operator");
                     break;
             }
         }
 
-        public static void main(String[] args) {
-            Calculator obj = new Calculator(10, 20, '+');
-            obj.calculate();
-        }
+    }
+    public static void main(String[] args) {
+        Calculator obj = new Calculator(10, 20, '+');
+        obj.calculate();
     }
 }
